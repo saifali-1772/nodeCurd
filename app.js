@@ -1,6 +1,7 @@
 const express = require('express')
 const { render } = require('express/lib/response')
 const app = express()
+const port = process.env.PORT || 6000
 
 const data = require('./module/db.config')
 const student_sm = require('./module/student_sm')
@@ -139,6 +140,6 @@ app.post('/addStudent', (req, res) => {
 
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('server start on port 6000')
 })
