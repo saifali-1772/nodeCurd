@@ -1,0 +1,32 @@
+<%- include('header') -%>
+<div id="main-content">
+    <h2>All Records</h2>
+    <table cellpadding="7px">
+        <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Action</th>
+        </thead>
+        <tbody>
+          <% for(var i=0;i<data.length;i++){ %>
+            <tr>
+                <td><%= data[i]._id %></td>
+                <td><%= data[i].name %></td>
+                <td><%= data[i].email %></td>
+                <td><%= data[i].address %></td>
+                <td><%= data[i].phone %></td>
+                <td>
+                    <a href='/edit?id=<%= data[i]._id %>'>Edit</a>
+                    <a href='/deleteData?sid=<%= data[i]._id %>'>Delete</a>
+                </td>
+            </tr>
+          <% } %>
+        </tbody>
+    </table>
+</div>
+</div>
+</body>
+</html>
